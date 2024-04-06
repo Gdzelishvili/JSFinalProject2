@@ -11,25 +11,42 @@ var requestOptions = {
   headers: myHeaders
 };
 
-let tickers = "btc"
-let tags = "Bitcoin"
-let sources = "-bloomberg.com"
-let sort = "desc"
-let offset = "1"
-let limit = "10"
-let keywords = "bitcoin "
 let fallback = "on"
-let date = "last3months"
+
+function fetchNews() {
+
+  const tickers = document.getElementById('tickers').value;
+  const tags = document.getElementById('tags').value;
+  const sources = document.getElementById('sources').value;
+  const sort = document.getElementById('sort').value;
+  const offset = document.getElementById('offset').value;
+  const limit = document.getElementById('limit').value;
+  const keywords = document.getElementById('keywords').value;
+  const date = document.getElementById('date').value;
 
 
-fetch(`https://api.apilayer.com/financelayer/news?tickers=${tickers}&tags=${tags}&sources=${sources}&sort=${sort}&offset=${offset}&limit=${limit}&keywords=${keywords}&fallback=${fallback}&date=${date}`, requestOptions)
-  .then(response => response.json())
-  .then(result => {
-    console.log(result);
-    const newsCards = createCards(result.data);
-    newsCards.forEach(newsCard => {
-      document.querySelector("#root").appendChild(newsCard);
-    });
-  })
-  .catch(error => console.log('error', error));
 
+  fetch(`https://api.apilayer.com/financelayer/news?tickers=${tickers}&tags=${tags}&sources=${sources}&sort=${sort}&offset=${offset}&limit=${limit}&keywords=${keywords}&fallback=${fallback}&date=${date}`, requestOptions)
+    .then(response => response.json())
+    .then(result => {
+      console.log(result);
+      const newsCards = createCards(result.data);
+      newsCards.forEach(newsCard => {
+        document.querySelector("#root").appendChild(newsCard);
+      });
+    })
+    .catch(error => console.log('error', error));
+
+}
+
+document.getElementById('tickers').addEventListener('change', fetchNews);
+document.getElementById('tags').addEventListener('change', fetchNews);
+document.getElementById('sources').addEventListener('change', fetchNews);
+document.getElementById('sort').addEventListener('change', fetchNews);
+document.getElementById('offset').addEventListener('change', fetchNews);
+document.getElementById('limit').addEventListener('change', fetchNews);
+document.getElementById('keywords').addEventListener('change', fetchNews);
+document.getElementById('date').addEventListener('change', fetchNews);
+
+
+fetchNews();

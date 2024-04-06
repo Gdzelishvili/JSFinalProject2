@@ -23,11 +23,12 @@ const firebaseConfig = {
 // Initialize Firebase
 const app = initializeApp(firebaseConfig);
 const auth = getAuth();
-console.log(auth);
+
 const authForm = document.querySelector('#authenticationForm');
 const email = authForm.querySelector('input[type="email"]');
 const password = authForm.querySelector('input[type="password"]');
 const hiddenContent = document.querySelector('#hiddenContent');
+const warning_error = document.querySelector(".warning_error");
 
 function onUserStateChanged() {
     if (auth.currentUser) {
@@ -51,14 +52,17 @@ authForm.querySelector('button[id="signUp"]')
         createUserWithEmailAndPassword(auth, email.value, password.value)
             .then((userCredential) => {
                 const user = userCredential.user;
-                console.log(user);
+                
             })
             .catch((error) => {
                 const errorCode = error.code;
                 const errorMessage = error.message;
                 console.log(errorMessage);
+                warning_error.innerHTML = errorMessage;
             });
     });
+
+    
 
 authForm.querySelector('button[id="signIn"]')
     .addEventListener('click', (e) => {
@@ -67,12 +71,13 @@ authForm.querySelector('button[id="signIn"]')
         signInWithEmailAndPassword(auth, email.value, password.value)
             .then((userCredential) => {
                 const user = userCredential.user;
-                console.log(user);
             })
             .catch((error) => {
                 const errorCode = error.code;
                 const errorMessage = error.message;
                 console.log(errorCode, errorMessage);
+                warning_error.innerHTML = errorMessage;
+
             });
     });
 
