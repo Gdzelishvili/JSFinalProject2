@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=viewport, initial-scale=1.0">
+    <title>authenticationForm</title>
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/auth.css">
+</head>
+<body>
+    <form id="authenticationForm">
+        <div>
+            <P>Register to enter site</P><br>
+            <label for="email">Email</label>
+            <input type="email" id="email" name="email">
+        </div>
+        <div>
+            <label for="password">Password</label>
+            <input type="password" id="password" name="password">
+        </div>
+        <button type="submit" id="signIn">Sign In</button>
+        <button type="submit" id="signUp">Sign Up</button>
+    </form>
+
+    <div id="hiddenContent">
+        <h1><a href="main.html">Press To Enter Site</a></h1>
+        <p>Some hidden content</p>
+        <p>Welcome <span id="username"></span></p>
+        <button id="signOut">Sign Out</button>
+    </div>
+    <script type="module" src="js/firebase.js"></script>
+</body>
+</html>
