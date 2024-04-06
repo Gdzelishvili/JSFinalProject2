@@ -14,10 +14,6 @@
   overflow: hidden;
   display: flex;
   gap: 15px;
-  /* background-image: url('https://st.depositphotos.com/1518767/5160/i/450/depositphotos_51603569-stock-photo-curve-of-digital-screens-in.jpg');
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat; */
   
 }
 
@@ -86,7 +82,7 @@ header {
 /* space div */
 
 .space{
-  height: 195px;
+  height: 210px;
   background-color: #ffffff;
   display: flex;
   align-items: center;
@@ -156,9 +152,3 @@ body {
   background-color: var(--bg-color);
 }
 
-/* #root {
-  background-image: url('https://yt3.googleusercontent.com/ytc/AIdro_mouPwOFVpBnCeDz7YOUvFooCZSAC4fRorzYz7Gmw=s900-c-k-c0x00ffffff-no-rj');
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-} */

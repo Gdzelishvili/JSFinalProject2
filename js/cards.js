@@ -11,7 +11,7 @@ class NewsCard extends DomItem {
         imgContainer.classList.add("image-container");
     
         const img = document.createElement("img");
-        img.setAttribute("src", "https://pbs.twimg.com/profile_images/527286735957286912/bHt5M8SZ_400x400.png");
+        img.setAttribute("src", "media/news logo.png");
         img.setAttribute("alt", this.attributes.title);
         imgContainer.appendChild(img);
     
@@ -48,8 +48,8 @@ class NewsCard extends DomItem {
     #buildSiteUrl() {
         const SiteUrl = document.createElement("a");
         SiteUrl.innerHTML = "Read more";
-        SiteUrl.setAttribute("href", this.attributes.url);
-        console.log(this.attributes.url)
+        SiteUrl.setAttribute("href", `this.attributes.url`);
+        console.log(this.attributes.url);
     
         return SiteUrl;
       }
