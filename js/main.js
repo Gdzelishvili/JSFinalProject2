@@ -3,7 +3,7 @@ import { createCards } from './cards.js';
 
 
 var myHeaders = new Headers();
-myHeaders.append("apikey", "pRSDxTFRKXI36Fb2L4TvFjUxOMbz9uEN");
+myHeaders.append("apikey", "WBfEwOVgNMjDS3UMguKYF1oUAfeHbg2n");
 
 var requestOptions = {
   method: 'GET',
@@ -26,7 +26,7 @@ function fetchNews() {
 
 
 
-  fetch(`https://api.apilayer.com/financelayer/news?tickers=${tickers}&tags=${tags}&sources=${sources}&sort=${sort}&offset=${offset}&limit=${limit}&keywords=${keywords}&fallback=${fallback}&date=${date}`, requestOptions)
+  fetch(`1https://api.apilayer.com/financelayer/news?tickers=${tickers}&tags=${tags}&sources=${sources}&sort=${sort}&offset=${offset}&limit=${limit}&keywords=${keywords}&fallback=${fallback}&date=${date}`, requestOptions)
     .then(response => response.json())
     .then(result => {
       console.log(result);
@@ -36,7 +36,6 @@ function fetchNews() {
       });
     })
     .catch(error => console.log('error', error));
-
 }
 
 document.getElementById('tickers').addEventListener('change', fetchNews);
