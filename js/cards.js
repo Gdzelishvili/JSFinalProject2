@@ -1,5 +1,6 @@
 
 import DomItem from './domItem.js';
+import { favoriteCount, updateFavoritesCounter } from './utils.js';
 
 class NewsCard extends DomItem {
   constructor(attributes, children) {
@@ -48,8 +49,7 @@ class NewsCard extends DomItem {
   #buildSiteUrl() {
     const SiteUrl = document.createElement("a");
     SiteUrl.innerHTML = "Read more";
-    SiteUrl.setAttribute("href", `this.attributes.url`);
-    console.log(this.attributes.url);
+    SiteUrl.setAttribute("href", `${this.attributes.url}`);
 
     return SiteUrl;
   }
@@ -62,7 +62,9 @@ class NewsCard extends DomItem {
   }
 
   saveToLocalStorage() {
-
+    favoriteCount++;
+    updateFavoritesCounter();
+    
     const data = {
       title: this.attributes.title,
       description: this.attributes.description,
@@ -71,8 +73,8 @@ class NewsCard extends DomItem {
       url: this.attributes.url
 
     };
-    favoriteCount++;
     
+
     const jsonData = JSON.stringify(data);
 
     localStorage.setItem("favoriteNews", jsonData);
