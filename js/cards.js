@@ -57,30 +57,30 @@ class NewsCard extends DomItem {
   #buildSaveButton() {
     const button = document.createElement("button");
     button.textContent = "Save to Favorites";
-    button.addEventListener("click", () => this.saveToLocalStorage());
+    button.addEventListener("click", () => this.saveToLocalStorage(this.attributes));
     return button;
   }
 
-  saveToLocalStorage() {
-    favoriteCount++;
-    updateFavoritesCounter();
+  saveToLocalStorage(cardData) {
+    // favoriteCount++;
+    // updateFavoritesCounter();
     
-    const data = {
-      title: this.attributes.title,
-      description: this.attributes.description,
-      tags: this.attributes.tags,
-      published_at: this.attributes.published_at,
-      url: this.attributes.url
-
+    let  data = {
+      title: cardData.title,
+      description: cardData.description,
+      tags: cardData.tags,
+      published_at: cardData.published_at,
+      url: cardData.url
     };
-    
-
-    const jsonData = JSON.stringify(data);
-
-    localStorage.setItem("favoriteNews", jsonData);
-
+  
+    const savedData = localStorage.getItem('favoriteNews');
+    let favoriteNews = savedData ? JSON.parse(savedData) : [];
+    favoriteNews.push(data);
+  
+    localStorage.setItem("favoriteNews", JSON.stringify(favoriteNews));
+  
     window.location.href = "favorite.html";
-  }  
+  }
 
     render() {
       const card = document.createElement("div");

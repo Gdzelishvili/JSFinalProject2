@@ -1,3 +1,30 @@
-.favorite-card{
-    background-color: rgb(0, 255, 179);
+.favorite-card {
+  background-color: rgb(0, 255, 179);
+  border: 5px solid #f7bdbd;
+  border-radius: 5;
+  display: flex;
+}
+
+h3,
+p {
+  border: 3px dashed #f7bdbd;
+}
+
+a:hover {
+  border: 3px solid #d5906e;
+  border-radius: 5px;
+  padding: 2px;
+}
+
+.titleP {
+  font-size: 50px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  max-width: inherit;
+  width: inherit;
+  position: fixed;
+  top: 90px;
+  margin-top: 35px;
+  z-index: 5;
 }

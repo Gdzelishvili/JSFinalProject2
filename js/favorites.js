@@ -1,11 +1,11 @@
-const savedData = localStorage.getItem('favoriteNews');
+let savedData = localStorage.getItem('favoriteNews');
 if (savedData) {
-  const favoritesContainer = document.getElementById('favoritesContainer');
+  let favoritesContainer = document.getElementById('favoritesContainer');
 
-  const savedCards = JSON.parse(savedData);
+  let savedCards = JSON.parse(savedData);
 
   savedCards.forEach(cardData => {
-    const card = document.createElement('div');
+    let card = document.createElement('div');
     card.classList.add('favorite-card');
 
     card.innerHTML = `

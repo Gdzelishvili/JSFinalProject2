@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>World News</title>
+    <title>Favorite News</title>
     <link rel="stylesheet" href="css/reset.css">
     <script src="https://kit.fontawesome.com/f09529a2d4.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="css/style.css">
@@ -35,56 +35,21 @@
             <div class="header_button_div">
                 <a href="index.html"><button class="header_button">Sign OUT</button></a>
                 <a href="favorite.html"><i class="fa-regular fa-heart scale_style"></i></a>
-                <div id="favoritesCounter"></div>
+                
             </div>
     
         </header>
         <!-- space div -->
+        
         <div class="space"></div>
-    
-        <!-- input start -->
-        <P class="search_p">To sort or Search by different values use this fields</P>
-        <div id="filters">
-            <label for="tickers">Tickers:</label>
-            <input type="text" id="tickers" name="tickers">
-    
-            <label for="tags">Tags:</label>
-            <input type="text" id="tags" name="tags">
-    
-            <label for="sources">Sources:</label>
-            <input type="text" id="sources" name="sources">
-    
-            <label for="sort">Sort:</label>
-            <select id="sort" name="sort">
-                <option value="desc">Descending</option>
-                <option value="asc">Ascending</option>
-            </select>
-    
-            <label for="offset">Offset:</label>
-            <input type="number" id="offset" name="offset" value="0">
-    
-            <label for="limit">Limit:</label>
-            <input type="number" id="limit" name="limit" value="10">
-    
-            <label for="keywords">Keywords:</label>
-            <input type="text" id="keywords" name="keywords">
-    
-            <label for="date">Date:</label>
-            <select id="date" name="date">
-                <option value="today">Today</option>
-                <option value="thisweek">This Week</option>
-                <option value="thismonth">This Month</option>
-                <option value="last7days">Last 7 Days</option>
-                <option value="last30days">Last 30 Days</option>
-                <option value="last3months">Last 3 Months</option>
-            </select>
-        </div>
+        <P class="titleP">Check Your Favorite News ON Your Site</P>
         <button id="clearFavorites">Clear Favorites</button>
         <!-- app rendering div -->
         <div id="favoritesContainer"></div>
     </div>
     <script type="module" src="js/utils.js"></script>
     <script type="module" src="js/cleareFavorites.js"></script>
+    <script type="module" src="js/favorites.js"></script>
 </body>
 
 </html>

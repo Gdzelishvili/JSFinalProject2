@@ -24,26 +24,20 @@ function fetchNews() {
   const keywords = document.getElementById('keywords').value;
   const date = document.getElementById('date').value;
 
+ 
 
-
-  fetch(`https://1api.apilayer.com/financelayer/news?tickers=${tickers}&tags=${tags}&sources=${sources}&sort=${sort}&offset=${offset}&limit=${limit}&keywords=${keywords}&fallback=${fallback}&date=${date}`, requestOptions)
+  fetch(`https://api.apilayer.com/financelayer/news?tickers=${tickers}&tags=${tags}&sources=${sources}&sort=${sort}&offset=${offset}&limit=${limit}&keywords=${keywords}&fallback=${fallback}&date=${date}`, requestOptions)
     .then(response => response.json())
     .then(result => {
       console.log(result.data);
-      localStorage.setItem("resultData", JSON.stringify(result.data));
-      const newsCards = createCards(result.data);
+      localStorage.setItem("resultData",JSON.stringify(result.data) );
+      let newsCards = createCards(result.data);
       newsCards.forEach(newsCard => {
         document.querySelector("#root").appendChild(newsCard);
       });
     })
     .catch(error => {
       console.log('error', error);
-      const savedData = localStorage.getItem("resultData");
-      const originalData = JSON.parse(savedData);
-      const newsCards = createCards(originalData);
-      newsCards.forEach(newsCard => {
-        document.querySelector("#root").appendChild(newsCard);
-      });
     });
 }
 
