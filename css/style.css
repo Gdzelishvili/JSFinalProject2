@@ -141,6 +141,14 @@ header {
   padding: 2px;
 }
 
+a:hover {
+  border: 3px solid #d5906e;
+  border-radius: 5px;
+  padding: 2px;
+}
+.active{
+  border-bottom:2px dashed  #2bd439;
+}
 
 
 :root {
