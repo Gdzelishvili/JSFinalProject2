@@ -26,7 +26,7 @@ function fetchNews() {
 
  
 
-  fetch(`https://api.apilayer.com/financelayer/news?tickers=${tickers}&tags=${tags}&sources=${sources}&sort=${sort}&offset=${offset}&limit=${limit}&keywords=${keywords}&fallback=${fallback}&date=${date}`, requestOptions)
+  fetch(`https://1api.apilayer.com/financelayer/news?tickers=${tickers}&tags=${tags}&sources=${sources}&sort=${sort}&offset=${offset}&limit=${limit}&keywords=${keywords}&fallback=${fallback}&date=${date}`, requestOptions)
     .then(response => response.json())
     .then(result => {
       console.log(result.data);
