@@ -24,7 +24,7 @@ function fetchNews() {
   const keywords = document.getElementById('keywords').value;
   const date = document.getElementById('date').value;
 
- 
+//  why it does not save files correctly on github i do not know
 
   fetch(`https://api.apilayer.com/financelayer/news?tickers=${tickers}&tags=${tags}&sources=${sources}&sort=${sort}&offset=${offset}&limit=${limit}&keywords=${keywords}&fallback=${fallback}&date=${date}`, requestOptions)
     .then(response => response.json())
